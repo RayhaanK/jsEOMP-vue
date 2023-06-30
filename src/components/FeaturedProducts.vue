@@ -11,7 +11,7 @@
       <div
         class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mt-3 mx-sm-5 featPost"
       >
-        <div class="col g-3 mt-4" v-for="item in prod" :key="item.id">
+        <div class="col g-3 mt-4" v-for="item in products" :key="item.id">
           <div class="card bg-dark-subtle">
             <h4 class="text-center prodTitle">{{ item.title }}</h4>
             <div class="image">
@@ -43,22 +43,13 @@
 
 <script>
 export default {
-  data() {
-    return {
-      prod: [],
-    };
-  },
-  methods: {
-    async fetchData() {
-      const res = await fetch(
-        "https://rayhaank.github.io/exercise-jsonServer/products.json"
-      );
-      let parsedProd = await res.json();
-      this.prod = parsedProd.products.slice(0 , 3);
+  computed: {
+    products() {
+      return this.$store.state.products;
     },
   },
   mounted() {
-    this.fetchData();
+    this.$store.dispatch("fetchProducts");
   },
 };
 </script>

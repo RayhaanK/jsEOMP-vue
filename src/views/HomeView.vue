@@ -2,18 +2,20 @@
   <div class="home">
     <Home/>
     <About/>
-    <Products/>
+    <FeaturedProducts/>
+    <Contact/>
   </div>
 </template>
 
 <script>
 import Home from "@/components/Home.vue"
 import About from "@/components/About.vue"
-import Products from "@/components/FeaturedProducts.vue"
+import FeaturedProducts from "@/components/FeaturedProducts.vue"
+import Contact from "@/components/Contact.vue"
 
   export default {
     components: {
-      Home, About, Products
+      Home, About, FeaturedProducts, Contact
     }
   }
 </script>

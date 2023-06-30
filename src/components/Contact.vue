@@ -70,4 +70,37 @@
 export default {};
 </script>
 
-<style scoped></style>
+<style scoped>
+
+
+.btns {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .butn1, .butn2 {
+    padding: 0.4rem;
+    width: 7rem;
+  }
+
+  .butn1 {
+    margin-right: 4px;
+    background-color: #F7F7F7;
+    border: none;
+    border-radius: 12px;
+  }
+
+  .butn1:hover {
+    background-color: #f7f7f7d3;  
+  }
+
+  .butn2 {
+    background-color: #F7F7F7;
+    border: none;
+    border-radius: 12px;
+  }
+
+  .butn2:hover {
+   background-color: #f7f7f7d3;
+  }
+</style>

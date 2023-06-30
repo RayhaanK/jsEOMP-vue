@@ -23,9 +23,6 @@
               <router-link to="/product">Products</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/checkout">Checkout</router-link>
-            </li>
-            <li class="nav-item">
               <router-link to="/admin">Admin Interface</router-link>
             </li>
           </ul>
