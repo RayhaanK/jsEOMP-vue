@@ -170,4 +170,16 @@ a:hover {
 .contentBtn:hover {
   background-color: #f7f7f788;
 }
+
+@media screen and (max-width: 1055px) {
+    .prodTitle {
+        font-size: 1.3rem !important;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .prodTitle {
+        font-size: 1.5rem !important;
+    }
+}
 </style>

@@ -10,8 +10,7 @@ export default createStore({
   getters: {
   },
   mutations: {
-    setProducts(state,products){
-
+    setProducts(state, products){
       state.products = products
 
     }
