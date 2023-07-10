@@ -1,15 +1,13 @@
 <template>
-    <Navbar/>
-  <router-view/>
-  <Footer/>
+  <router-view />
+  <Footer />
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue"
-import Footer from "@/components/Footer.vue"
+import Footer from "@/components/Footer.vue";
 
 export default {
-  components: { Navbar, Footer },
+  components: { Footer },
 };
 </script>
 <style>
@@ -19,18 +17,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #fff;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #FFC26F;
 }
 </style>

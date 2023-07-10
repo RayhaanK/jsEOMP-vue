@@ -1,5 +1,6 @@
 <template>
   <section id="admin" class="adm">
+    <Navbar />
     <div class="container-fluid">
       <h1
         class="display-1 text-center text-white mb-2 text-decoration-underline p-4"
@@ -41,15 +42,15 @@
                 ></button>
               </div>
               <div class="modal-body">
-                <p>Title</p>
+                <p class="title">Title</p>
                 <input type="text" id="title" />
-                <p>Description</p>
+                <p class="title">Description</p>
                 <input type="text" id="description" />
-                <p>Content</p>
+                <p class="title">Content</p>
                 <input type="text" id="content" />
-                <p>Image Link</p>
+                <p class="title">Image Link</p>
                 <input type="text" id="imageLink" />
-                <p>Price</p>
+                <p class="title">Price</p>
                 <input type="text" id="price" />
               </div>
               <div class="modal-footer">
@@ -74,25 +75,92 @@
             <th scope="col">Image</th>
             <th scope="col">Description</th>
             <th scope="col">Amount</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody id="adminInput">
           <tr v-for="item in products" :key="item.id">
             <th>
-              <div class="tablerows">{{ item.id }}</div>
+              <div class="tableRows">{{ item.id }}</div>
             </th>
             <td>
-              <div class="tablerows">{{ item.title }}</div>
+              <div class="tableRows">{{ item.title }}</div>
             </td>
             <td>
-                <div class="tableRows">
-                    <img :src="item.image" :alt="item.title" loading="lazy" />
+              <div class="  ">
+                <img :src="item.image" :alt="item.title" loading="lazy" />
+              </div>
+            </td>
+            <td>
+              <div class="tableRows">{{ item.description }}</div>
+            </td>
+            <td>
+              <div class="tableRows">R{{ item.amount }}</div>
+            </td>
+            <td>
+              <div class="tableRows">
+                <button
+                  type="button"
+                  class="btn1 mb-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal2"
+                >
+                  Edit Item
+                </button>
+                <div
+                  class="modal fade"
+                  id="exampleModal2"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content bg-dark-subtle">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          Add Item
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Title</p>
+                        <input type="text" id="editTitle" />
+                        <p>Description</p>
+                        <input type="text" id="editDescription" />
+                        <p>Content</p>
+                        <input type="text" id="editContent" />
+                        <p>Image Link</p>
+                        <input type="text" id="editImageLink" />
+                        <p>Price</p>
+                        <input type="text" id="editPrice" />
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn1"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button
+                          type="button"
+                          class="btn1"
+                          id="updateProduct"
+                        >
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                <button class="btn1" id="deleteBtn">Delete</button>
+              </div>
             </td>
-            <td>
-              <div class="tablerows">{{ item.description }}</div>
-            </td>
-            <td><div class="tablerows"> R{{ item.amount }}</div></td>
           </tr>
         </tbody>
       </table>
@@ -101,7 +169,9 @@
 </template>
 
 <script>
+import Navbar from "@/components/Navbar.vue";
 export default {
+  components: { Navbar },
   computed: {
     products() {
       return this.$store.state.products;
@@ -138,6 +208,10 @@ export default {
 
 .btn2:hover {
   background-color: #f7f7f7d3;
+}
+
+.title {
+  color: black !important;
 }
 
 .modal-body {

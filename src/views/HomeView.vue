@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Home/>
+    <Landing/>
     <About/>
     <Contact/>
   </div>
@@ -8,18 +8,16 @@
 
 <script>
 import Home from "@/components/Home.vue"
+import Landing from "@/components/Landing.vue"
 import About from "@/components/About.vue"
 import Contact from "@/components/Contact.vue"
 
   export default {
     components: {
-      Home, About, Contact
+      Home, About, Contact, Landing
     }
   }
 </script>
 
 <style scoped>
-  .home {
-    background-color: #C38154;
-  }
 </style>

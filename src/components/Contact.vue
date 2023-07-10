@@ -19,6 +19,7 @@
             class="form-control"
             id="exampleFormControlInput1"
             placeholder="Name"
+            required
           />
         </div>
         <div class="mb-1 p-3">
@@ -32,6 +33,7 @@
             id="exampleFormControlInput1"
             placeholder="Surname
             "
+            required
           />
         </div>
         <div class="mb-3 p-3">
@@ -44,6 +46,7 @@
             class="form-control"
             id="exampleFormControlInput1"
             placeholder="name@example.com"
+            required
           />
         </div>
         <div class="mb-3 p-3">
@@ -55,6 +58,7 @@
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
+            required
           ></textarea>
           <div class="btns">
             <button class="formButton mt-3 butn1" type="submit">Send</button>
